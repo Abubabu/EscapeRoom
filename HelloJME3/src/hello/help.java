@@ -9,15 +9,18 @@ import com.jme3.math.ColorRGBA;
 /** Sample 1 - how to get started with the most simple JME 3 application.
  * Display a blue 3D cube and view from all sides by
  * moving the mouse and pressing the WASD keys. */
-public class myGame extends SimpleApplication {
+public class help extends SimpleApplication {
 
     public static void main(String[] args){
-        myGame app = new myGame();
+        help app = new help();
         app.start(); // start the game
     }
 
     @Override
     public void simpleInitApp() {
+    	flyCam.setEnabled(true);
+    	flyCam.setMoveSpeed(25);
+    	flyCam.setRotationSpeed(5);
         Box b = new Box(1, 1, 1); // create cube shape
         Geometry geom = new Geometry("Box", b);  // create cube geometry from the shape
         Material mat = new Material(assetManager,
